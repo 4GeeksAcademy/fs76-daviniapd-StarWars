@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { HomeDesigns } from "./views/homeDesigns";
 import { HomeGeeks } from "./views/homeGeeks";
-import { Single } from "./views/single";
+import { SingleCharacter } from "./views/singleCharacter";
 import { HomeDaviniapd } from "./views/homeDaviniapd";
 import injectContext from "./store/appContext";
 
@@ -25,7 +25,7 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<HomeDesigns />} />
 						<Route path="/homeGeeks" element={<HomeGeeks />} />
-						<Route path="/single/:theid" element={<Single />} />
+						<Route path="/singleCharacter/:characterId" element={<SingleCharacter />} />
 						<Route path="/homeDaviniapd" element={<HomeDaviniapd />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>

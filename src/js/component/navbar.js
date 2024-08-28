@@ -11,8 +11,8 @@ export const Navbar = () => {
 				<button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 					Favorites
 				</button>
-				<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Item</a></li>
+				<ul className="dropdown-menu">
+						<li><a className="dropdown-item" href="#">Item</a></li>
 					</ul>
 
 			</div>
