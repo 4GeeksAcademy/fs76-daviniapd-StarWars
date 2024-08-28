@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
+import { HomeDesigns } from "./views/homeDesigns";
+import { HomeGeeks } from "./views/homeGeeks";
 import { Single } from "./views/single";
+import { HomeDaviniapd } from "./views/homeDaviniapd";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -22,9 +23,10 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
+						<Route path="/" element={<HomeDesigns />} />
+						<Route path="/homeGeeks" element={<HomeGeeks />} />
 						<Route path="/single/:theid" element={<Single />} />
+						<Route path="/homeDaviniapd" element={<HomeDaviniapd />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

@@ -1,0 +1,68 @@
+
+.full-screen-bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100vh; 
+    background-image: url("https://c.wallhere.com/photos/18/33/minimalism_mountains_artwork-249615.jpg!d"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+  
+  #titleHome {
+  font-weight: 300;
+  letter-spacing: 2px;
+  }
+  
+  #button-dpd, #button-4geeks {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  }
+  
+  #button-dpd:after, #button-4geeks:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  transition: 0.2s;
+  
+  }
+  
+  #button-dpd:hover:after,
+  #button-4geeks:hover:after  {
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  border-radius: 3%;
+  }
+  
+  #button-dpd:hover,
+  #button-4geeks:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+  }
+  
+  #button-dpd:after {
+  right: 7px;
+  }
+  
+  #button-4geeks:after {
+  left: 7px;
+  }
+  
+  
