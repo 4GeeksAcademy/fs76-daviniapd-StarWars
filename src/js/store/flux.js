@@ -9,9 +9,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 	getActions().changeColor(0, "green");
 			// },
 			loadCharacters: () => {
-				fetch("https://www.swapi.tech/api/people/")
+				fetch('https://www.swapi.tech/api/people/')
 				  .then(response => response.json())
-				  .then(data => setStore({ characters: data.results }));
+				  .then((data) => {
+					const results = data.results;
+					results.forEach((result) => {
+					  const charactersId = result.uid; 
+					  fetch(`https://www.swapi.tech/api/people/${charactersId}`)
+						.then(response => response.json())
+						.then((characterData) => {
+						  const character = characterData.result.properties; 
+						  setStore({ characters: [...getStore().characters, character] }); 
+						})
+						.catch((error) => {
+						  console.error("Error fetching character:", error);
+						});
+					});
+				  })
+				  .catch((error) => {
+					console.error("Error fetching characters:", error);
+				  });
 			  }
 
 			//   loadCharacters: (uid) => {

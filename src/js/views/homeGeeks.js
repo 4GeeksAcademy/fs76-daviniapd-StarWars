@@ -15,7 +15,7 @@ export const HomeGeeks = () => {
 			<h1 className="text-danger my-5">Characters</h1>
 			<div className="d-flex flex-wrap">
 			{store.characters.map((character) => (
-          <CardCharacters key={character.uid} name={character.name} />
+          <CardCharacters key={character.uid} name={character.name} gender={character.gender} hair_color={character.hair_color} eye_color={character.eye_color} />
         ))}
 			</div>
 			<h1 className="text-danger my-5">Planets</h1>
