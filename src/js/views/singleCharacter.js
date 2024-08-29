@@ -3,25 +3,47 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const SingleCharacter = props => {
-	const { store, actions } = useContext(Context);
-    const {character, setCharacter} = useState({})
-	const params = useParams();
-	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.character[params.characterId].name}</h1>
+export const SingleCharacter = () => {
+    const { store, actions } = useContext(Context);
+    const [character, setCharacter] = useState(null);
+    const params = useParams();
 
-			<hr className="my-4" />
+    useEffect(() => {
+        if (store.characters.length === 0) {
+            console.log("Loading characters...");
+            actions.loadCharacters();
+        } else {
+            const foundCharacter = store.characters.find(character => character.uid === params.id);
+            console.log("foundCharacter:", foundCharacter);
+            setCharacter(foundCharacter);
+        }
+    }, [store.characters, params.id]);
 
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
-		</div>
-	);
+    if (!character) {
+        return <div>Loading...</div>;
+    }
+
+    return (
+        <div className="jumbotron m-5">
+            <h1 className="display-4">Single Character</h1>
+            <p>Name: {character.properties.name}</p>
+            <p>Birth Year: {character.properties.birth_year}</p>
+            <p>Gender: {character.properties.gender}</p>
+            <p>Height: {character.properties.height}</p>
+            <p>Skin Color: {character.properties.skin_color}</p>
+            <p>Eye Color: {character.properties.eye_color}</p>
+
+            <hr className="my-4" />
+
+            <Link to="/">
+                <span className="btn btn-primary btn-lg" href="#" role="button">
+                    Back home
+                </span>
+            </Link>
+        </div>
+    );
 };
 
 SingleCharacter.propTypes = {
-	match: PropTypes.object
+    match: PropTypes.object
 };

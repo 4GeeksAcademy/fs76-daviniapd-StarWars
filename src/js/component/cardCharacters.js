@@ -9,7 +9,7 @@ export const CardCharacters = (props) => {
 	return (
 
 		<div
-			key={props.uid}
+
 			className="card me-3"
 			style={{ width: "18rem" }}>
 			<img src="https://placehold.jp/400x200.png" className="card-img-top" alt="imageCard" />
