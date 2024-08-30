@@ -14,7 +14,7 @@ export const HomeGeeks = () => {
     return (
         <div className="container">
             <h1 className="text-danger my-5">Characters</h1>
-            <div className="d-flex flex-wrap">
+            <div className="row flex-nowrap" style={{ overflowX: "auto", maxWidth: "100vw" }}>
                 {store.characters.map((character, index) => (
                     <CardCharacters
                         key={index}
