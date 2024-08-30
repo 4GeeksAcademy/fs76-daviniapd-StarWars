@@ -8,6 +8,13 @@ import "../../styles/demo.css";
 export const CardCharacters = (props) => {
 	const { store, actions } = useContext(Context);
 
+	const handleFavoriteClick = (event) => {
+		event.stopPropagation();
+		actions.favoriteList(props.name);
+	};
+
+	const isFavorite = store.favoriteItem.includes(props.name);
+
 	return (
 
 		<div
@@ -25,9 +32,9 @@ export const CardCharacters = (props) => {
 				<Link to={"/singleCharacter/" + props.uid}>
 					<button type="button" className="btn btn-outline-primary pb-2">Learn more!</button>
 				</Link>
-				<button className="btn btn btn-outline-warning float-end" onClick={()=>actions.favoriteList(props.name)}>
-					<i className="fa-regular fa-heart"></i>
-				</button>
+                <button className="btn btn-outline-warning float-end" onClick={handleFavoriteClick}>
+                    <i className={`${isFavorite ? 'fa-solid fa-heart' : 'fa-regular fa-heart text-warning'}`}></i>
+                </button>
 			</div>
 		</div>
 
