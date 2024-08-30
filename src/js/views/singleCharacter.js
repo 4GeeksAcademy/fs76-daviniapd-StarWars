@@ -34,12 +34,6 @@ export const SingleCharacter = () => {
             <p>Eye Color: {character.properties.eye_color}</p>
 
             <hr className="my-4" />
-
-            <Link to="/">
-                <span className="btn btn-primary btn-lg" href="#" role="button">
-                    Back home
-                </span>
-            </Link>
         </div>
     );
 };
