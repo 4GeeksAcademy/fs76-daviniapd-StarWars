@@ -1,5 +1,4 @@
 const getState = ({ getStore, getActions, setStore }) => {
-    // Recuperar datos de localStorage al inicializar la store
     const storedCharacters = JSON.parse(localStorage.getItem('characters')) || [];
     const storedPlanets = JSON.parse(localStorage.getItem('planets')) || [];
     const storedStarships = JSON.parse(localStorage.getItem('starships')) || [];

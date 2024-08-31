@@ -12,7 +12,7 @@ export const Navbar = () => {
 			<Link to="/homeGeeks">
 				<img src="https://i.pinimg.com/originals/c7/7c/11/c77c11c6c03ff5c4f2d250e893ca615f.png" alt="Star-Wars-Logo" style={{ height: '100%', maxHeight: '50px' }}/>
 			</Link>
-			<div className="btn-group ml-auto me-5">
+			<div className="btn-group ml-auto me-3">
 				<button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 					Favorites
 					<span className="bg-secondary rounded mx-2 px-1"style={{ fontSize: '0.85em' }}>

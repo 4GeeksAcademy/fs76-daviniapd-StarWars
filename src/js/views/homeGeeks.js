@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import { CardCharacters } from "../component/cardCharacters";
 import { CardPlanets } from "../component/cardPlanets";
 import { CardStarships } from "../component/cardStarships";
+import SearchBar from "../component/searchBar";
 import "../../styles/demo.css";
 
 export const HomeGeeks = () => {
@@ -12,11 +13,13 @@ export const HomeGeeks = () => {
     useEffect(() => {
         actions.loadCharacters();
         actions.loadPlanets();
+        actions.loadStarships();
     }, []);
 
 
     return (
         <div className="container">
+            <SearchBar />
             <h1 className="text-danger my-3">Characters</h1>
             <div className="row flex-nowrap" style={{ overflowX: "auto", maxWidth: "100vw" }}>
                 {store.characters.map((character, index) => (
