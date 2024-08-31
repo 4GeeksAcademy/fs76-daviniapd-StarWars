@@ -2,6 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
             characters: [],
+            planets: [],
+            starships: [],
             favoriteItem: [],
             characterImages: {
                 "Luke Skywalker": "https://static.wikia.nocookie.net/esstarwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest?cb=20071214134433",
@@ -33,6 +35,44 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({ characters });
                 } catch (error) {
                     console.error("Error fetching characters:", error);
+                }
+            },
+
+            loadPlanets: async () => {
+                try {
+                    const response = await fetch('https://www.swapi.tech/api/planets/');
+                    const data = await response.json();
+                    const results = data.results;
+
+                    const planets = [];
+                    for (const result of results) {
+                        const planetId = result.uid;
+                        const planetResponse = await fetch(`https://www.swapi.tech/api/planets/${planetId}`);
+                        const planetData = await planetResponse.json();
+                        planets.push(planetData.result);
+                    }
+                    setStore({ planets });
+                } catch (error) {
+                    console.error("Error fetching planets:", error);
+                }
+            },
+
+            loadStarships: async () => {
+                try {
+                    const response = await fetch('https://www.swapi.tech/api/starships/');
+                    const data = await response.json();
+                    const results = data.results;
+
+                    const starships = [];
+                    for (const result of results) {
+                        const starshipId = result.uid;
+                        const starshipResponse = await fetch(`https://www.swapi.tech/api/starships/${starshipId}`);
+                        const starshipData = await starshipResponse.json();
+                        starships.push(starshipData.result);
+                    }
+                    setStore({ starships });
+                } catch (error) {
+                    console.error("Error fetching starships:", error);
                 }
             },
 

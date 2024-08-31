@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
-export const CardCharacters = (props) => {
+export const CardPlanets = (props) => {
 	const { store, actions } = useContext(Context);
 	const [isHovered, setIsHovered] = useState(false);
 
@@ -15,7 +15,7 @@ export const CardCharacters = (props) => {
 	};
 
 	const isFavorite = store.favoriteItem.includes(props.name);
-	const characterImage = store.characterImages[props.name]
+	// const characterImage = store.characterImages[props.name]
 
 
     return (
@@ -24,15 +24,14 @@ export const CardCharacters = (props) => {
 
 			className="card me-3"
 			style={{ width: "auto" }}>
-			<img src={characterImage} className="card-img-top" alt="imageCard" style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top"  }}/>
+			<img src="https://placehold.co/450" className="card-img-top" alt="imageCard" style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top"  }}/>
 			<div className="card-body">
 				<h5 className="card-titl py-2">{props.name}</h5>
 				<p className="card-text pb-2 d-flex flex-column">
-					<span>Gender: {props.gender}</span>
-					<span>Hair Color: {props.hair_color}</span>
-					<span>Eye Color: {props.eye_color}</span>
+					<span>Population: {props.population}</span>
+					<span>Terrain: {props.terrain}</span>
 				</p>
-				<Link to={"/singleCharacter/" + props.uid}>
+				<Link to={"/singlePlanet/" + props.uid}>
 					<button type="button" className="btn btn-outline-primary pb-2">Learn more!</button>
 				</Link>
 				<button 
