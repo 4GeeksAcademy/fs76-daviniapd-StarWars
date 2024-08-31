@@ -20,20 +20,35 @@ export const SingleCharacter = () => {
     }, [store.characters, params.id]);
 
     if (!character) {
-        return <div>Loading...</div>;
+        return <div className="container text-center">
+            <h1 className="pt-5"><i>Loading...</i></h1>
+            <img src="https://cdn.dribbble.com/users/601803/screenshots/2037073/bb8.gif" alt="loading" />
+        </div>;
     }
 
-    return (
-        <div className="jumbotron m-5">
-            <h1 className="display-4">Single Character</h1>
-            <p>Name: {character.properties.name}</p>
-            <p>Birth Year: {character.properties.birth_year}</p>
-            <p>Gender: {character.properties.gender}</p>
-            <p>Height: {character.properties.height}</p>
-            <p>Skin Color: {character.properties.skin_color}</p>
-            <p>Eye Color: {character.properties.eye_color}</p>
+    const characterImage = store.characterImages[character.properties.name]
 
-            <hr className="my-4" />
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col-6 text-center">
+                    <img src={characterImage} className="card-img-top" alt="imageCard" style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} />                </div>
+                <div className="col-6 text-center p-5">
+                    <h1 className="display-4"><b>{character.properties.name}</b></h1>
+                    <p className="fs-2">{character.description}</p>
+                </div>
+            </div>
+            <hr className="border border-danger border-1 my-4 opacity-75" />
+            <div className="row">
+                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Name</b> {character.properties.name}</p>
+                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Birth Year</b> {character.properties.birth_year}</p>
+                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Gender</b> {character.properties.gender}</p>
+                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Height</b>{character.properties.height}</p>
+                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Skin Color</b> {character.properties.skin_color}</p>
+                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Eye Color</b> {character.properties.eye_color}</p>
+            </div>
+
+
         </div>
     );
 };

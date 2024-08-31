@@ -7,7 +7,7 @@ export const Navbar = () => {
 
 	
 	return (
-		<nav className="navbar navbar-light bg-light px-5 py-3 mb-3">
+		<nav className="navbar navbar-light bg-light px-5 py-3">
 			        <div className="container">
 			<Link to="/homeGeeks">
 				<img src="https://i.pinimg.com/originals/c7/7c/11/c77c11c6c03ff5c4f2d250e893ca615f.png" alt="Star-Wars-Logo" style={{ height: '100%', maxHeight: '50px' }}/>
@@ -26,7 +26,7 @@ export const Navbar = () => {
 					) : (
 						store.favoriteItem.map((name, index) => (
 							<li className="d-flex" key={index}>
-								<Link className="dropdown-item" to={`/singleCharacter/${index + 1}`}>
+								<Link className="dropdown-item" to={"/homeGeeks"}>
 									{name}
 								</Link>
 								<i className="fa-solid fa-trash me-3 my-auto"

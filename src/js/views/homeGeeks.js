@@ -11,12 +11,13 @@ export const HomeGeeks = () => {
         actions.loadCharacters();
     }, []);
 
+
     return (
         <div className="container">
-            <h1 className="text-danger my-5">Characters</h1>
+            <h1 className="text-danger my-3">Characters</h1>
             <div className="row flex-nowrap" style={{ overflowX: "auto", maxWidth: "100vw" }}>
                 {store.characters.map((character, index) => (
-                    <div className="col-12 col-md-6 col-lg-4" key={index}>
+                    <div className="col-12 col-md-6 col-lg-3" key={index}>
                         <CardCharacters
                             name={character.properties.name}
                             gender={character.properties.gender}
@@ -27,7 +28,7 @@ export const HomeGeeks = () => {
                     </div>
                 ))}
             </div>
-            <h1 className="text-danger my-5">Planets</h1>
+            <h1 className="text-danger my-3">Planets</h1>
         </div>
     );
 };
