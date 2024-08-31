@@ -1,9 +1,16 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { useLocation } from "react-router-dom";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
+	const location = useLocation();
+
+    if (location.pathname === "/homeDaviniapd") {
+        return null;
+    }
+
 
 	
 	return (
@@ -19,17 +26,16 @@ export const Navbar = () => {
 						{store.favoriteItem.length}
 					</span>
 				</button>
-				<ul className="dropdown-menu">
+				<ul className="dropdown-menu dropdown-menu-end">
 
 					{store.favoriteItem.length === 0 ? (
 						<li className="dropdown-item">(empty)</li>
 					) : (
 						store.favoriteItem.map((name, index) => (
-							<li className="d-flex" key={index}>
-								<Link className="dropdown-item" to={"/homeGeeks"}>
+							<li className="dropdown-item d-flex justify-content-between" key={index}>
 									{name}
-								</Link>
-								<i className="fa-solid fa-trash me-3 my-auto"
+
+								<i className="fa-solid fa-trash my-auto ms-3"
 									onClick={(e) => {
 										e.stopPropagation();
 										actions.removeFavorite(index);
