@@ -15,7 +15,7 @@ export const CardStarships = (props) => {
 	};
 
 	const isFavorite = store.favoriteItem.includes(props.name);
-	// const characterImage = store.characterImages[props.name]
+	const starshipImage = store.starshipImages[props.name]
 
 
     return (
@@ -24,7 +24,7 @@ export const CardStarships = (props) => {
 
 			className="card me-3"
 			style={{ width: "auto" }}>
-			<img src="https://placehold.co/450" className="card-img-top" alt="imageCard" style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top"  }}/>
+			<img src={starshipImage} className="card-img-top" alt="imageCard" style={{ width: "100%", height: "200px", objectFit: "cover", objectPosition: "center"  }}/>
 			<div className="card-body">
 				<h5 className="card-titl py-2">{props.name}</h5>
 				<p className="card-text pb-2 d-flex flex-column">

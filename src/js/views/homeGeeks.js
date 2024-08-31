@@ -57,6 +57,8 @@ export const HomeGeeks = () => {
                     </div>
                 ))}
             </div>
+            <span className="row w-100 my-5"></span>
         </div>
+
     );
 };

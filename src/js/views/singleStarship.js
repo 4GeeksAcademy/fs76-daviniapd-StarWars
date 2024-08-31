@@ -26,13 +26,13 @@ export const SingleStarship = () => {
         </div>;
     }
 
-    // const starshipImage = store.starshipImages[starship.properties.name]
+    const starshipImage = store.starshipImages[starship.properties.name]
 
     return (
         <div className="container">
             <div className="row">
                 <div className="col-6 text-center">
-                    <img src="https://placehold.co/500"  className="card-img-top" alt="imageCard" style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} />                </div>
+                    <img src={starshipImage}  className="card-img-top" alt="imageCard" style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top" }} />                </div>
                 <div className="col-6 text-center p-5">
                     <h1 className="display-4"><b>{starship.properties.name}</b></h1>
                     <p className="fs-2">{starship.description}</p>
