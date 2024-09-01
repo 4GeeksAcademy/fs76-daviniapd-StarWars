@@ -6,7 +6,7 @@ import { HomeDesigns } from "./views/homeDesigns";
 import { HomeGeeks } from "./views/homeGeeks";
 import { SingleCharacter } from "./views/singleCharacter";
 import { SinglePlanet } from "./views/singlePlanet";
-import { SingleStarship } from "./views/singleStarship";
+import { SingleVehicle } from "./views/singleVehicle";
 import { HomeDaviniapd } from "./views/homeDaviniapd";
 import injectContext from "./store/appContext";
 
@@ -29,7 +29,7 @@ const Layout = () => {
 						<Route path="/homeGeeks" element={<HomeGeeks />} />
 						<Route path="/singleCharacter/:id" element={<SingleCharacter />} />
 						<Route path="/singlePlanet/:id" element={<SinglePlanet />} />
-						<Route path="/singleStarship/:id" element={<SingleStarship />} />
+						<Route path="/singleVehicle/:id" element={<SingleVehicle />} />
 						<Route path="/homeDaviniapd" element={<HomeDaviniapd />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>

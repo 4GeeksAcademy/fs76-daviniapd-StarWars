@@ -15,16 +15,18 @@ export const CardCharacters = (props) => {
 	};
 
 	const isFavorite = store.favoriteItem.includes(props.name);
-	const characterImage = store.characterImages[props.name]
 
 
-    return (
+	return (
 
 		<div
 
 			className="card me-3"
 			style={{ width: "auto" }}>
-			<img src={characterImage} className="card-img-top" alt="imageCard" style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top"  }}/>
+			<img src={`https://starwars-visualguide.com/assets/img/characters/${props.uid}.jpg`}
+				className="card-img-top" alt="imageCard"
+				style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top" }}
+			/>
 			<div className="card-body">
 				<h5 className="card-titl py-2">{props.name}</h5>
 				<p className="card-text pb-2 d-flex flex-column">
@@ -35,8 +37,8 @@ export const CardCharacters = (props) => {
 				<Link to={"/singleCharacter/" + props.uid}>
 					<button type="button" className="btn btn-outline-primary pb-2">Learn more!</button>
 				</Link>
-				<button 
-					className="btn btn-outline-warning float-end" 
+				<button
+					className="btn btn-outline-warning float-end"
 					onClick={handleFavoriteClick}
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}

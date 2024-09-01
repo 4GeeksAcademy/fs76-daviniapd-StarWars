@@ -12,7 +12,7 @@ const SearchBar = () => {
 
     useEffect(() => {
         if (query.length > 0) {
-            const allItems = [...store.characters, ...store.planets, ...store.starships];
+            const allItems = [...store.characters, ...store.planets, ...store.vehicles];
             const filteredSuggestions = allItems.filter(item =>
                 item.properties.name.toLowerCase().includes(query.toLowerCase())
             );
@@ -28,15 +28,15 @@ const SearchBar = () => {
             navigate(`/singleCharacter/${item.uid}`);
         } else if (store.planets.some(planet => planet.properties.name === item.properties.name)) {
             navigate(`/singlePlanet/${item.uid}`);
-        } else if (store.starships.some(starship => starship.properties.name === item.properties.name)) {
-            navigate(`/singleStarship/${item.uid}`);
+        } else if (store.vehicles.some(vehicle => vehicle.properties.name === item.properties.name)) {
+            navigate(`/singleVehicle/${item.uid}`);
         } else {
             console.log("Item not found in any category");
         }
     };
 
     const handleFocus = () => {
-        const allItems = [...store.characters, ...store.planets, ...store.starships];
+        const allItems = [...store.characters, ...store.planets, ...store.vehicles];
         setSuggestions(allItems);
     };
 
@@ -82,7 +82,7 @@ const SearchBar = () => {
                         onChange={(e) => setQuery(e.target.value)}
                         onFocus={handleFocus}
                         onKeyDown={handleKeyDown}
-                        placeholder="Search for characters, planets, or starships..."
+                        placeholder="Search for characters, planets, or vehicles..."
                         aria-describedby="searchLoupa"
                         ref={inputRef}
                     />

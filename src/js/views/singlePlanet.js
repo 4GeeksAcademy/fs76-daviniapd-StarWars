@@ -26,13 +26,14 @@ export const SinglePlanet = () => {
         </div>;
     }
 
-    const planetImage = store.planetImages[planet.properties.name]
-
     return (
         <div className="container">
             <div className="row">
                 <div className="col-6 text-center">
-                    <img src={planetImage}   className="card-img-top" alt="imageCard" style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} />                </div>
+                <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}    
+                className="card-img-top" alt="Not found picture of this planet" 
+                style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} />    
+                </div>
                 <div className="col-6 text-center p-5">
                     <h1 className="display-4"><b>{planet.properties.name}</b></h1>
                     <p className="fs-2">{planet.description}</p>
