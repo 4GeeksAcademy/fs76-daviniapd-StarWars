@@ -26,15 +26,15 @@ export const SinglePlanet = () => {
         </div>;
     }
 
-    const defaultImageUrl = "https://user-images.githubusercontent.com/5948318/38711585-ef6a8970-3e9c-11e8-96c7-fc8a610cdde2.png";
+    const defaultImageUrl = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnU3dm5qMjlodHJoczY2cW9sZjBxYmVwYjl1eXIwZzRhd2Jjenh3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3K0D1Dkqh9MOmLSjzW/giphy.webp";
 
     return (
-        <div className="container">
+        <div className="container" style={{height: "85vh"}}>
             <div className="row">
                 <div className="col-6 text-center">
                 <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}    
                 className="card-img-top" alt="Not found picture of this planet" 
-                style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} 
+                style={{ width: "100%", height: "auto", objectFit: "cover", objectPosition: "top" }} 
                 onError={(e) => e.target.src = defaultImageUrl}/>   
                 </div>
                 <div className="col-6 text-center p-5">

@@ -18,7 +18,7 @@ export const HomeGeeks = () => {
 
 
     return (
-        <div className="container">
+        <div className="container mb-5">
             <SearchBar />
             <h1 className="text-danger my-3">Characters</h1>
             <div className="row flex-nowrap" style={{ overflowX: "auto", maxWidth: "100vw" }}>
@@ -60,7 +60,7 @@ export const HomeGeeks = () => {
                     </div>
                 ))}
             </div>
-            <span className="row w-100 my-5"></span>
+
         </div>
 
     );

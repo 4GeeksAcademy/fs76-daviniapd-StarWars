@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => (
-	<footer className="footer fixed-bottom py-1 bg-light text-center bg-opacity-25 d-flex justify-content-between mt-5">
+	<footer className="footer px-5 py-2 bg-warning text-center bg-opacity-25 d-flex justify-content-between">
 		
 		<span className="px-5 mx-5"></span>
 		<p className="my-auto ms-5">

@@ -28,7 +28,7 @@ export const SingleCharacter = () => {
 
 
     return (
-        <div className="container">
+        <div className="container" style={{height: "85vh"}}>
             <div className="row">
                 <div className="col-6 text-center">
                 <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="card-img-top" alt="imageCard" style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} />                </div>
