@@ -26,13 +26,16 @@ export const SinglePlanet = () => {
         </div>;
     }
 
+    const defaultImageUrl = "https://user-images.githubusercontent.com/5948318/38711585-ef6a8970-3e9c-11e8-96c7-fc8a610cdde2.png";
+
     return (
         <div className="container">
             <div className="row">
                 <div className="col-6 text-center">
                 <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}    
                 className="card-img-top" alt="Not found picture of this planet" 
-                style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} />    
+                style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} 
+                onError={(e) => e.target.src = defaultImageUrl}/>   
                 </div>
                 <div className="col-6 text-center p-5">
                     <h1 className="display-4"><b>{planet.properties.name}</b></h1>
