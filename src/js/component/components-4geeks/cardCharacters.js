@@ -20,7 +20,7 @@ export const CardCharacters = (props) => {
 		<div
 
 			className="card me-3"
-			style={{ width: "auto" }}>
+			style={{ width: "auto"}}>
 			<img src={`https://starwars-visualguide.com/assets/img/characters/${props.uid}.jpg`}
 				className="card-img-top" alt="imageCard"
 				style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top" }}
