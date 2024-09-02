@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
+import { Context } from "../../store/appContext";
 
-import "../../styles/demo.css";
 
 export const CardPlanets = (props) => {
 	const { store, actions } = useContext(Context);
@@ -22,11 +21,11 @@ export const CardPlanets = (props) => {
 
 			className="card me-3"
 			style={{ width: "auto" }}>
-			<img src={`https://starwars-visualguide.com/assets/img/planets/${props.uid}.jpg`} 
-			className="card-img-top" alt="Not found picture of this planet" 
-			style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "top"}} 
-			onError={(e) => e.target.src = defaultImageUrl}/>
-			
+			<img src={`https://starwars-visualguide.com/assets/img/planets/${props.uid}.jpg`}
+				className="card-img-top" alt="Not found picture of this planet"
+				style={{ width: "100%", height: "300px", objectFit: "cover", objectPosition: "top" }}
+				onError={(e) => e.target.src = defaultImageUrl} />
+
 			<div className="card-body">
 				<h5 className="card-titl py-2">{props.name}</h5>
 				<p className="card-text pb-2 d-flex flex-column">

@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
-import { CardCharacters } from "../component/cardCharacters";
-import { CardPlanets } from "../component/cardPlanets";
-import { CardVehicles } from "../component/cardVehicles";
-import SearchBar from "../component/searchBar";
-import "../../styles/demo.css";
+import { Context } from "../../store/appContext";
+import { CardCharacters } from "../../component/components-4geeks/cardCharacters";
+import { CardPlanets } from "../../component/components-4geeks/cardPlanets";
+import { CardVehicles } from "../../component/components-4geeks/cardVehicles";
+import SearchBar from "../../component/components-4geeks/searchBar";
+
 
 export const HomeGeeks = () => {
     const { store, actions } = useContext(Context);

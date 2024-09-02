@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+import { Context } from "../../store/appContext";
 
 export const SinglePlanet = () => {
     const { store, actions } = useContext(Context);
@@ -29,13 +29,13 @@ export const SinglePlanet = () => {
     const defaultImageUrl = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnU3dm5qMjlodHJoczY2cW9sZjBxYmVwYjl1eXIwZzRhd2Jjenh3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3K0D1Dkqh9MOmLSjzW/giphy.webp";
 
     return (
-        <div className="container" style={{height: "85vh"}}>
+        <div className="container" style={{ height: "85vh" }}>
             <div className="row">
                 <div className="col-6 text-center">
-                <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}    
-                className="card-img-top" alt="Not found picture of this planet" 
-                style={{ width: "100%", height: "auto", objectFit: "cover", objectPosition: "top" }} 
-                onError={(e) => e.target.src = defaultImageUrl}/>   
+                    <img src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}
+                        className="card-img-top" alt="Not found picture of this planet"
+                        style={{ width: "100%", height: "auto", objectFit: "cover", objectPosition: "top" }}
+                        onError={(e) => e.target.src = defaultImageUrl} />
                 </div>
                 <div className="col-6 text-center p-5">
                     <h1 className="display-4"><b>{planet.properties.name}</b></h1>

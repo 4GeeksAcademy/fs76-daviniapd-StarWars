@@ -1,11 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../store/appContext";
+import { Context } from "../../store/appContext";
 
 
-import "../../styles/demo.css";
-
-export const CardVehicles = (props) => {
+export const CardCharacters = (props) => {
 	const { store, actions } = useContext(Context);
 	const [isHovered, setIsHovered] = useState(false);
 
@@ -17,24 +15,28 @@ export const CardVehicles = (props) => {
 	const isFavorite = store.favoriteItem.includes(props.name);
 
 
-    return (
+	return (
 
 		<div
 
 			className="card me-3"
 			style={{ width: "auto" }}>
-			<img src={`https://starwars-visualguide.com/assets/img/vehicles/${props.uid}.jpg`} className="card-img-top" alt="imageCard" style={{ width: "100%", height: "200px", objectFit: "cover", objectPosition: "center"  }}/>
+			<img src={`https://starwars-visualguide.com/assets/img/characters/${props.uid}.jpg`}
+				className="card-img-top" alt="imageCard"
+				style={{ width: "100%", height: "450px", objectFit: "cover", objectPosition: "top" }}
+			/>
 			<div className="card-body">
 				<h5 className="card-titl py-2">{props.name}</h5>
 				<p className="card-text pb-2 d-flex flex-column">
-					<span>Cost in credits: {props.cost_in_credits}</span>
-					<span>Passengers: {props.passengers}</span>
+					<span>Gender: {props.gender}</span>
+					<span>Hair Color: {props.hair_color}</span>
+					<span>Eye Color: {props.eye_color}</span>
 				</p>
-				<Link to={"/singleVehicle/" + props.uid}>
+				<Link to={"/singleCharacter/" + props.uid}>
 					<button type="button" className="btn btn-outline-primary pb-2">Learn more!</button>
 				</Link>
-				<button 
-					className="btn btn-outline-warning float-end" 
+				<button
+					className="btn btn-outline-warning float-end"
 					onClick={handleFavoriteClick}
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}

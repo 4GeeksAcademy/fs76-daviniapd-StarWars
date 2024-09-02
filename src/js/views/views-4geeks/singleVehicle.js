@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+import { Context } from "../../store/appContext";
 
 export const SingleVehicle = () => {
     const { store, actions } = useContext(Context);
@@ -27,10 +27,10 @@ export const SingleVehicle = () => {
     }
 
     return (
-        <div className="container" style={{height: "85vh"}}>
+        <div className="container" style={{ height: "85vh" }}>
             <div className="row">
                 <div className="col-6 text-center">
-                <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`}   className="card-img-top" alt="imageCard" style={{ width: "100%", height: "auto", objectFit: "cover", objectPosition: "top" }} />                </div>
+                    <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`} className="card-img-top" alt="imageCard" style={{ width: "100%", height: "auto", objectFit: "cover", objectPosition: "top" }} />                </div>
                 <div className="col-6 text-center p-5">
                     <h1 className="display-4"><b>{vehicle.properties.name}</b></h1>
                     <p className="fs-2">{vehicle.description}</p>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Context } from '../store/appContext';
+import { Context } from '../../store/appContext';
 
 const SearchBar = () => {
     const [query, setQuery] = useState('');
@@ -74,7 +74,7 @@ const SearchBar = () => {
     return (
         <div>
             <div className="input-group my-3 d-flex flex-row">
-                <div style={{ width: "30%"}} ref={dropdownRef}>
+                <div style={{ width: "30%" }} ref={dropdownRef}>
                     <input
                         type="text"
                         className="form-control rounded-start"
@@ -87,11 +87,11 @@ const SearchBar = () => {
                         ref={inputRef}
                     />
                     {suggestions.length > 0 && (
-                        <ul className={`dropdown-menu ${suggestions.length > 0 ? 'show' : ''}`} 
-                        style={{
-                            maxHeight: '300px',
-                            overflowY: 'auto' 
-                        }}>
+                        <ul className={`dropdown-menu ${suggestions.length > 0 ? 'show' : ''}`}
+                            style={{
+                                maxHeight: '300px',
+                                overflowY: 'auto'
+                            }}>
                             {suggestions.map((item, index) => (
                                 <li
                                     key={index}

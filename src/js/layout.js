@@ -3,15 +3,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { HomeDesigns } from "./views/homeDesigns";
-import { HomeGeeks } from "./views/homeGeeks";
-import { SingleCharacter } from "./views/singleCharacter";
-import { SinglePlanet } from "./views/singlePlanet";
-import { SingleVehicle } from "./views/singleVehicle";
-import { HomeDaviniapd } from "./views/homeDaviniapd";
+import { HomeGeeks } from "./views/views-4geeks/homeGeeks";
+import { SingleCharacter } from "./views/views-4geeks/singleCharacter";
+import { SinglePlanet } from "./views/views-4geeks/singlePlanet";
+import { SingleVehicle } from "./views/views-4geeks/singleVehicle";
+import { HomeDaviniapd } from "./views/views-dpd/homeDaviniapd";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+import { Navbar } from "./component/components-4geeks/navbar";
+import { Footer } from "./component/components-4geeks/footer";
 
 //create your first component
 const Layout = () => {
