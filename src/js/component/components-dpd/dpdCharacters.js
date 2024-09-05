@@ -52,23 +52,23 @@ export const DpdCharacters = (props) => {
 					</div>
 					<div className="front-content" id="front-content">
 						<h4 className="card-title p-3 fs-3">{props.name}</h4>
-						<p className="card-text pb-2 d-flex flex-column fs-5 ms-2">
-							<span>Gender: {props.gender}</span>
-							<span>Hair Color: {props.hair_color}</span>
-							<span>Eye Color: {props.eye_color}</span>
+						<p className="card-text text-center mb-5 d-flex flex-column fs-5">
+							<span className="star-wars-font">Gender: {props.gender}</span>
+							<span className="star-wars-font">Hair Color: {props.hair_color}</span>
+							<span className="star-wars-font">Eye Color: {props.eye_color}</span>
 						</p>
-						<div className="d-flex justify-content-center pb-5">
-						<Link to={"/singleCharacter/" + props.uid}>
-							<button type="button" className="btn btn-outline-primary me-2" id="btnLearnMore">Learn more!</button>
-						</Link>
-						<button
-							className="btn btn-outline-warning float-end"
-							onClick={handleFavoriteClick}
-							onMouseEnter={() => setIsHovered(true)}
-							onMouseLeave={() => setIsHovered(false)}
-						>
-							<i className={`${isFavorite ? 'fa-solid fa-heart' : `${isHovered ? 'fa-solid fa-heart text-dark' : 'fa-regular fa-heart text-warning'}`}`}></i>
-						</button>
+						<div className="d-flex justify-content-center py-5">
+							<Link to={"/singleCharacter/" + props.uid}>
+								<button type="button" className="btn btn-outline-primary me-2" id="btnLearnMore">Learn more!</button>
+							</Link>
+							<button
+								className="btn btn-outline-warning float-end"
+								onClick={handleFavoriteClick}
+								onMouseEnter={() => setIsHovered(true)}
+								onMouseLeave={() => setIsHovered(false)}
+							>
+								<i className={`${isFavorite ? 'fa-solid fa-heart' : `${isHovered ? 'fa-solid fa-heart text-dark' : 'fa-regular fa-heart text-warning'}`}`}></i>
+							</button>
 						</div>
 					</div>
 				</div>

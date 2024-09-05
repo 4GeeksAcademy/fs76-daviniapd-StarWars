@@ -18,7 +18,7 @@
 
 .front,
 .back {
-    background-color: #025e73;
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -169,11 +169,19 @@
     color: #ffe81f;
 }
 
-.card-text {
-    font-family: 'SF Old Republic', sans-serif;
-}
+.star-wars-font {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffe81f; 
+    text-transform: uppercase;
+    transform: perspective(100px) rotateX(30deg) rotateY(359deg) translateY(40px);
+  }
+
+
 
 #btnLearnMore {
     font-family: 'SF Old Republic SC', sans-serif;
 
 }
+
