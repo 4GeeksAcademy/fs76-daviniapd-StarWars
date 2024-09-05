@@ -17,7 +17,14 @@ export const HomeDaviniapd = () => {
 
 	return (
 		<div className="full-screen-bg" id="bodyHomedDpd">
-			<div className="container mb-5" >
+			<div className="w-100 p-5" style={{
+				backgroundImage: "url(https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-08_c6531d30.jpeg)",
+				backgroundRepeat: "no-repeat",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				width: "100%"
+			}} >
+							<div className="container mb-5" >
 				<h1 className="my-3" id="categoryTitle">Characters</h1>
 				<div className="row flex-nowrap" style={{ overflowX: "auto", maxWidth: "100vw" }}>
 					{store.characters.map((character, index) => (
@@ -31,6 +38,7 @@ export const HomeDaviniapd = () => {
 							/>
 						</div>
 					))}
+					</div>
 				</div>
 			</div>
 

@@ -28,9 +28,13 @@ export const DpdCharacters = (props) => {
 							className="img"
 							style={{
 								backgroundImage: `url(https://starwars-visualguide.com/assets/img/characters/${props.uid}.jpg)`,
+								backgroundRepeat: "no-repeat",
+								backgroundSize: "cover",
+								backgroundPosition: "center",
 								height: "100%",
 								width: "100%"
 							}}
+							alt={props.name}
 						>
 							<h4 className="card-title p-3" >{props.name}</h4>
 						</div>
