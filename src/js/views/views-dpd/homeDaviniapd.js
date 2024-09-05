@@ -24,20 +24,20 @@ export const HomeDaviniapd = () => {
 				backgroundPosition: "center",
 				width: "100%"
 			}} >
-							<div className="container mb-5" >
-				<h1 className="my-3" id="categoryTitle">Characters</h1>
-				<div className="row flex-nowrap" style={{ overflowX: "auto", maxWidth: "100vw" }}>
-					{store.characters.map((character, index) => (
-						<div className="col-12 col-md-6 col-lg-4" key={index}>
-							<DpdCharacters
-								name={character.properties.name}
-								gender={character.properties.gender}
-								hair_color={character.properties.hair_color}
-								eye_color={character.properties.eye_color}
-								uid={character.uid}
-							/>
-						</div>
-					))}
+				<div className="container mb-5" >
+					<h1 className="my-3" id="categoryTitle">Characters</h1>
+					<div className="row flex-nowrap pb-3" style={{ overflowX: "auto" }}>
+						{store.characters.map((character, index) => (
+							<div className="col-12 col-md-6 col-lg-4" key={index}>
+								<DpdCharacters
+									name={character.properties.name}
+									gender={character.properties.gender}
+									hair_color={character.properties.hair_color}
+									eye_color={character.properties.eye_color}
+									uid={character.uid}
+								/>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>

@@ -20,7 +20,7 @@ export const DpdCharacters = (props) => {
 
 		<div
 
-			className="card me-3" id="card">
+			className="card" id="card">
 			<div className="content" id="content">
 				<div className="back" id="back">
 					<div className="back-content" id="back-content">
@@ -51,7 +51,7 @@ export const DpdCharacters = (props) => {
 						</div>
 					</div>
 					<div className="front-content" id="front-content">
-						<h4 className="card-title p-3 fs-3">{props.name}</h4>
+						<h4 className="card-title text-center p-3 fs-3">{props.name}</h4>
 						<p className="card-text text-center mb-5 d-flex flex-column fs-5">
 							<span className="star-wars-font">Gender: {props.gender}</span>
 							<span className="star-wars-font">Hair Color: {props.hair_color}</span>
