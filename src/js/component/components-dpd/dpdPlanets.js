@@ -4,7 +4,7 @@ import { Context } from "../../store/appContext";
 
 import "../../../styles/dpdCards.css"
 
-export const DpdCharacters = (props) => {
+export const DpdPlanets = (props) => {
 	const { store, actions } = useContext(Context);
 	const [isHovered, setIsHovered] = useState(false);
 
@@ -27,7 +27,7 @@ export const DpdCharacters = (props) => {
 						<div
 							className="img"
 							style={{
-								backgroundImage: `url(https://starwars-visualguide.com/assets/img/characters/${props.uid}.jpg)`,
+								backgroundImage: `url(https://starwars-visualguide.com/assets/img/planets/${props.uid}.jpg)`,
 								backgroundRepeat: "no-repeat",
 								backgroundSize: "cover",
 								backgroundPosition: "center",
@@ -53,9 +53,9 @@ export const DpdCharacters = (props) => {
 					<div className="front-content" id="front-content">
 						<h4 className="card-title text-center p-3 fs-3 text-light">{props.name}</h4>
 						<p className="card-text text-center mb-5 d-flex flex-column fs-5">
-							<span className="star-wars-font">Gender   <span className="fs-6"> {props.gender}</span></span>
-							<span className="star-wars-font">Hair Color   <span className="fs-6">  {props.hair_color}</span></span>
-							<span className="star-wars-font">Eye Color   <span className="fs-6">  {props.eye_color}</span></span>
+							<span className="star-wars-font">Population   <span className="fs-6"> {props.population}</span></span>
+							<span className="star-wars-font">Terrain   <span className="fs-6">  {props.terrain}</span></span>
+							<span className="star-wars-font">Climate   <span className="fs-6">  {props.climate}</span></span>
 						</p>
 						<div className="d-flex justify-content-center py-5">
 							<Link to={"/dpdSingleCha/" + props.uid}>

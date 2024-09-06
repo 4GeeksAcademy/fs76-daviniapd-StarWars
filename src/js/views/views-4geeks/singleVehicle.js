@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../../store/appContext";
+import { Navbar } from "../../component/components-4geeks/navbar";
 
 export const SingleVehicle = () => {
     const { store, actions } = useContext(Context);
@@ -27,6 +28,8 @@ export const SingleVehicle = () => {
     }
 
     return (
+        <>
+        <Navbar />
         <div className="container" style={{ height: "85vh" }}>
             <div className="row">
                 <div className="col-6 text-center">
@@ -48,6 +51,7 @@ export const SingleVehicle = () => {
 
 
         </div>
+        </>
     );
 };
 

@@ -7,12 +7,6 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	const location = useLocation();
 
-	if (location.pathname === "/homeDaviniapd") {
-		return null;
-	}
-
-
-
 	return (
 		<nav className="navbar navbar-light bg-light px-5 py-3">
 			<div className="container">

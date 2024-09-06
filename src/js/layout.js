@@ -8,6 +8,7 @@ import { SingleCharacter } from "./views/views-4geeks/singleCharacter";
 import { SinglePlanet } from "./views/views-4geeks/singlePlanet";
 import { SingleVehicle } from "./views/views-4geeks/singleVehicle";
 import { HomeDaviniapd } from "./views/views-dpd/homeDaviniapd";
+import { DpdSingleCha } from "./views/views-dpd/dpdSingleCha";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/components-4geeks/navbar";
@@ -23,7 +24,6 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
 					<Routes>
 						<Route path="/" element={<HomeDesigns />} />
 						<Route path="/homeGeeks" element={<HomeGeeks />} />
@@ -31,7 +31,8 @@ const Layout = () => {
 						<Route path="/singlePlanet/:id" element={<SinglePlanet />} />
 						<Route path="/singleVehicle/:id" element={<SingleVehicle />} />
 						<Route path="/homeDaviniapd" element={<HomeDaviniapd />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="/dpdSingleCha/:id" element={<DpdSingleCha />} />
+						<Route path="*" element={<div className="text-center mx-auto my-auto mt-5"> <h1>Not found in this galaxy!</h1><img src="https://cdn.dribbble.com/users/601803/screenshots/2037073/bb8.gif" alt="loading" /> </div>} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>
