@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../store/appContext";
 
@@ -7,6 +7,14 @@ import "../../../styles/dpdCards.css"
 export const DpdPlanets = (props) => {
 	const { store, actions } = useContext(Context);
 	const [isHovered, setIsHovered] = useState(false);
+	const [imageLoaded, setImageLoaded] = useState(false);
+
+	useEffect(() => {
+		const img = new Image();
+		img.src = `https://starwars-visualguide.com/assets/img/planets/${props.uid}.jpg`;
+		img.onload = () => setImageLoaded(true);
+		img.onerror = () => setImageLoaded(false);
+	  }, [props.uid]);
 
 	const handleFavoriteClick = (event) => {
 		event.stopPropagation();
@@ -14,6 +22,7 @@ export const DpdPlanets = (props) => {
 	};
 
 	const isFavorite = store.favoriteItem.includes(props.name);
+	const defaultImageUrl = "https://img.itch.zone/aW1nLzk3MzU5MTQucG5n/original/jopfxl.png";
 
 
 	return (
@@ -27,14 +36,13 @@ export const DpdPlanets = (props) => {
 						<div
 							className="img"
 							style={{
-								backgroundImage: `url(https://starwars-visualguide.com/assets/img/planets/${props.uid}.jpg)`,
 								backgroundRepeat: "no-repeat",
 								backgroundSize: "cover",
-								backgroundPosition: "center",
+								backgroundPosition: "top",
 								height: "100%",
-								width: "100%"
+								width: "100%",
+								backgroundImage: imageLoaded ? `url(https://starwars-visualguide.com/assets/img/planets/${props.uid}.jpg)` : `url(${defaultImageUrl})`
 							}}
-							alt={props.name}
 						>
 							<h4 className="card-title p-3" >{props.name}</h4>
 						</div>

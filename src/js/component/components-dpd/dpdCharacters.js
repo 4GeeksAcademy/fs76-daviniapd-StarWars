@@ -35,6 +35,7 @@ export const DpdCharacters = (props) => {
 								width: "100%"
 							}}
 							alt={props.name}
+
 						>
 							<h4 className="card-title p-3" >{props.name}</h4>
 						</div>
