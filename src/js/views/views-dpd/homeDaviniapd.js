@@ -4,6 +4,7 @@ import { Context } from "../../store/appContext";
 import { DpdCharacters } from "../../component/components-dpd/dpdCharacters";
 import { DpdPlanets } from "../../component/components-dpd/dpdPlanets";
 import { DpdNavbar } from "../../component/components-dpd/dpdNavbar";
+import { DpdVehicles } from "../../component/components-dpd/dpdVehicles";
 
 import "../../../styles/homedpd.css"
 
@@ -21,14 +22,15 @@ export const HomeDaviniapd = () => {
 		<>
 		<DpdNavbar />
 			<div className="full-screen-bg" id="bodyHomedDpd">
-				<div className="w-100 p-5" style={{
-					backgroundImage: "url(https://lumiere-a.akamaihd.net/v1/images/image_2f7ca5d1.jpeg)",
+				<div className="w-100 py-5" style={{
+					backgroundImage: "url(https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-35_a474129e.jpeg)",
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					width: "100%"
+					width: "100%",
+
 				}} >
-					<div className="container mb-5" style={{ marginTop: "100px"}}>
+					<div className="container mb-5">
 						<h1 className="my-3 mt-5" id="categoryTitle">Characters </h1>
 						<div className="row flex-nowrap pb-3" style={{ overflowX: "auto" }}>
 							{store.characters.map((character, index) => (
@@ -45,12 +47,12 @@ export const HomeDaviniapd = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-100 p-5" style={{
+				<div className="w-100 p-5 mt-5 py-5" style={{
 					backgroundImage: "url(https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-08_c6531d30.jpeg)",
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					width: "100%"
+					width: "100%",
 				}} >
 					<div className="container mb-5" >
 						<h1 className="my-3" id="categoryTitle">Planets</h1>
@@ -69,6 +71,30 @@ export const HomeDaviniapd = () => {
 						</div>
 					</div>
 				</div>
+				<div className="w-100 p-5 mt-5 py-5 bg-black" style={{
+					backgroundImage: "url(https://lumiere-a.akamaihd.net/v1/images/image_2f7ca5d1.jpeg)",
+					backgroundRepeat: "no-repeat",
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					width: "100%",
+				}} >
+					<div className="container mb-5" >
+						<h1 className="my-3" id="categoryTitle">Vehicles</h1>
+						<div className="row flex-nowrap pb-3" style={{ overflowX: "auto" }}>
+							{store.vehicles.map((vehicle, index) => (
+								<div className="col-12 col-md-6 col-lg-3" key={index}>
+									<DpdVehicles
+										name={vehicle.properties.name}
+										cost_in_credits={vehicle.properties.cost_in_credits}
+										passengers={vehicle.properties.passengers}
+										crew={vehicle.properties.crew}
+										uid={vehicle.uid}
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
 
 
 				<h1 className="text-center bg-warning p-5" id="titleHomr">	<Link to="/" className="mx-2">
@@ -78,17 +104,3 @@ export const HomeDaviniapd = () => {
 		</>
 	);
 };
-
-// export const HomeDaviniapd = () => {
-// 	const { store, actions } = useContext(Context);
-
-// 	return (
-// 		<>
-// 			<div className="d-flex justify-content-center align-items-center h-100 flex-column mt-5">
-// 				<h1 className="text-center my-3 p-5 bg-warning" id="titleHomr"><i className="fa-solid fa-radiation"></i>  UNDER CONSTRUCTION  <i className="fa-solid fa-radiation"></i></h1>
-// 				<img src="https://cdn.dribbble.com/users/601803/screenshots/2037073/bb8.gif" alt="loading" />
-// 			</div>
-
-// 		</>
-// 	);
-// };
