@@ -8,22 +8,21 @@ export const DpdNavbar  = () => {
 
 
 	return (
-		<nav className="navbar navbar-light bg-light bg-opacity-25 px-5 py-3" style={{ zIndex: 1000 }}>
-			<div className="container">
+		<nav className="navbar navbar-light bg-black d-flex justify-content-around py-2" style={{ zIndex: 1000 }}>
 				<Link to="/homeDaviniapd">
-					<img src="https://i.pinimg.com/originals/c7/7c/11/c77c11c6c03ff5c4f2d250e893ca615f.png" alt="Star-Wars-Logo" style={{ height: '100%', maxHeight: '50px' }} />
+					<img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" alt="Star-Wars-Logo" style={{ height: '100%', maxHeight: '90px' }} />
 				</Link>
 				<div className="btn-group ml-auto me-3">
-					<button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+					<button type="button" className="btn btn-outline-light me-2 dropdown-toggle p-1 px-3" data-bs-toggle="dropdown" aria-expanded="false" id="btnFavDpd">
 						Favorites
-						<span className="bg-secondary rounded mx-2 px-1" style={{ fontSize: '0.85em' }}>
+						<span className="rounded mx-2 px-1 text-dark fw-bold" style={{ fontSize: '0.85em', backgroundColor: "#ffe81f" }}>
 							{store.favoriteItem.length}
 						</span>
 					</button>
-					<ul className="dropdown-menu dropdown-menu-end">
+					<ul className="dropdown-menu dropdown-menu-end mt-2 me-2">
 
 						{store.favoriteItem.length === 0 ? (
-							<li className="dropdown-item">(empty)</li>
+							<li className="dropdown-item">(list empty)</li>
 						) : (
 							store.favoriteItem.map((name, index) => (
 								<li className="dropdown-item d-flex justify-content-between" key={index}>
@@ -41,7 +40,7 @@ export const DpdNavbar  = () => {
 					</ul>
 
 				</div>
-			</div>
+
 		</nav>
 	);
 };

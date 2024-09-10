@@ -33,3 +33,8 @@
     border-radius: 10px;
 
   }
+
+  #btnFavDpd {
+    font-family: 'Space Age', sans-serif;
+    transform: scaleY(1.5); 
+}

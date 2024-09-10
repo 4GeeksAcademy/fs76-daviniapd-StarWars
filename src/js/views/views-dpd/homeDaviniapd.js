@@ -28,8 +28,8 @@ export const HomeDaviniapd = () => {
 					backgroundPosition: "center",
 					width: "100%"
 				}} >
-					<div className="container mb-5" >
-						<h1 className="my-3 mt-5" id="categoryTitle">Characters</h1>
+					<div className="container mb-5" style={{ marginTop: "100px"}}>
+						<h1 className="my-3 mt-5" id="categoryTitle">Characters </h1>
 						<div className="row flex-nowrap pb-3" style={{ overflowX: "auto" }}>
 							{store.characters.map((character, index) => (
 								<div className="col-12 col-md-6 col-lg-3" key={index}>
