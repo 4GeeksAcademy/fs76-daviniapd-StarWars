@@ -4,7 +4,7 @@
 #card {
     overflow: visible;
     width: auto;
-    height: 31vh;
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.15);
     border: none;
 }
@@ -145,9 +145,9 @@
 }
 
 #bottom {
-    background-color: #d1c2a3;
+    background-color: #3c2700;
     left: 20px;
-    top: 140px;
+    top: 20px;
     width: 120px;
     height: 120px;
     animation-delay: -800ms;
