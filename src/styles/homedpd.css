@@ -44,3 +44,12 @@
     font-family: 'Space Age', sans-serif;
     transform: scaleY(1.5); 
 }
+
+
+/* Cambiar el color del borde al enfocar el input */
+.custom-input:focus {
+  border-color: rgb(255, 233, 31);
+  box-shadow: 0 0 5px 2px rgba(255, 230, 0, 0.5); /* Cambia el color de la sombra a rojo */
+
+}
+

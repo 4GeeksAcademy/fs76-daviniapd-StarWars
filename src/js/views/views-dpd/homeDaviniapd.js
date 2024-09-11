@@ -5,6 +5,7 @@ import { DpdCharacters } from "../../component/components-dpd/dpdCharacters";
 import { DpdPlanets } from "../../component/components-dpd/dpdPlanets";
 import { DpdNavbar } from "../../component/components-dpd/dpdNavbar";
 import { DpdVehicles } from "../../component/components-dpd/dpdVehicles";
+import { DpdSearch } from "../../component/components-dpd/dpdSearch";
 
 import "../../../styles/homedpd.css"
 
@@ -21,6 +22,7 @@ export const HomeDaviniapd = () => {
 	return (
 		<>
 		<DpdNavbar />
+
 			<div className="full-screen-bg" id="bodyHomedDpd">
 				<div className="w-100 py-5" style={{
 					backgroundImage: "url(https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-35_a474129e.jpeg)",
@@ -31,6 +33,7 @@ export const HomeDaviniapd = () => {
 
 				}} >
 					<div className="container mb-5">
+					<DpdSearch />
 						<h1 className="my-3 mt-5" id="categoryTitle">Characters </h1>
 						<div className="row flex-nowrap pb-3" style={{ overflowX: "auto" }}>
 							{store.characters.map((character, index) => (
