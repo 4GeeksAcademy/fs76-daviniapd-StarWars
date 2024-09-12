@@ -54,21 +54,15 @@ const SearchBar = () => {
         const selectedItem = suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase());
         if (selectedItem) {
             handleSelect(selectedItem);
-        } else if (query.trim() === '') {
-            alert('Please, enter a valid name');
-        } else {
-            alert('Please, enter a valid name');
+        }  else {
+            console.log("No matching item found");
         }
     };
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            if (query.trim() !== '') {
-                handleSearch();
-            } else {
-                event.preventDefault();
-                alert('Please, enter a valid name');
-            }
+            handleSearch();
+
         }
     };
 
@@ -82,11 +76,11 @@ const SearchBar = () => {
     return (
         <div>
             <div className="input-group my-3 d-flex flex-row ">
-                <div ref={dropdownRef}>
+                <div style={{ width: "30%" }} ref={dropdownRef}>
                     <input
                         type="text"
-                        className={`form-control rounded-start ${query.trim() === '' || !suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase()) ? 'is-invalid' : ''}`}
-                        value={query}
+                        className="form-control rounded-start"                       
+                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onFocus={handleFocus}
                         onKeyDown={handleKeyDown}

@@ -46,14 +46,7 @@ export const DpdSingleCha = () => {
             </div>
             <div style={{ position: "relative", height: "80vh" }}>
                 <div className="container card p-4 m-5"
-                    id="cardSingleDpd"
-                    style={{
-                        position: "absolute",
-                        top: "20%",
-                        left: "50%",
-                        transform: "translate(-50%, -10%)",
-                        width: "100%",
-                    }}>
+                    id="cardSingleDpd">
                     <div className="row">
                         <div className="col-6 text-center" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                             <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="card_load" alt="imageCard" style={{ width: "75%", height: "85%", objectFit: "cover", objectPosition: "top" }} />

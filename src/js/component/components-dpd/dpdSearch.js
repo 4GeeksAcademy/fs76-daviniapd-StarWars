@@ -25,11 +25,11 @@ export const DpdSearch = () => {
     const handleSelect = (item) => {
         console.log("Selected item:", item);
         if (store.characters.some(character => character.properties.name === item.properties.name)) {
-            navigate(`/singleCharacter/${item.uid}`);
+            navigate(`/dpdSingleCha/${item.uid}`);
         } else if (store.planets.some(planet => planet.properties.name === item.properties.name)) {
-            navigate(`/singlePlanet/${item.uid}`);
+            navigate(`/dpdSinglePla/${item.uid}`);
         } else if (store.vehicles.some(vehicle => vehicle.properties.name === item.properties.name)) {
-            navigate(`/singleVehicle/${item.uid}`);
+            navigate(`/dpdSingleVehi/${item.uid}`);
         } else {
             console.log("Item not found in any category");
         }
@@ -48,21 +48,31 @@ export const DpdSearch = () => {
             setSuggestions([]);
         }
     };
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSearch = () => {
         const selectedItem = suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase());
         if (selectedItem) {
             handleSelect(selectedItem);
+            setErrorMessage(''); // Limpiar el mensaje de error
+        } else if (query.trim() === '') {
+            setErrorMessage('Please, enter a valid name');
         } else {
-            console.log("No matching item found");
+            setErrorMessage('No results found for your search');
         }
     };
-
+    
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            handleSearch();
+            event.preventDefault(); // Evita el comportamiento por defecto
+            if (query.trim() === '') {
+                setErrorMessage('Please, enter a valid name');
+            } else {
+                handleSearch();
+            }
         }
     };
+    
 
     useEffect(() => {
         document.addEventListener('click', handleClickOutside);
@@ -77,24 +87,34 @@ export const DpdSearch = () => {
                 <div ref={dropdownRef}>
                     <input
                         type="text"
-                        className="form-control rounded-start custom-input"
-                        style={{ width: "350px" }}
+                        className={`custom-input form-control rounded-start ${errorMessage ? 'is-invalid' : ''}`}
+                        style={{ width: "22vw" }}
                         value={query}
-                        onChange={(e) => setQuery(e.target.value)}
+                        onChange={(e) => {
+                            setQuery(e.target.value);
+                            setErrorMessage(''); // Limpiar el mensaje de error al escribir
+                        }}
                         onFocus={handleFocus}
                         onKeyDown={handleKeyDown}
                         placeholder="Search for characters, planets, or vehicles..."
                         aria-describedby="searchLoupa"
                         ref={inputRef}
                     />
+                    {errorMessage && (
+                        <div className="invalid-feedback">
+                            {errorMessage}
+                        </div>
+                    )}
+
                     {suggestions.length > 0 && (
                         <ul className={`dropdown-menu ${suggestions.length > 0 ? 'show' : ''}`}
-                        style={{
-                            maxHeight: '300px',
-                            overflowY: 'auto',
-                            right: 0,
-                            left: 'auto'
-                          }}>
+                            style={{
+                                maxHeight: '300px',
+                                overflowY: 'auto',
+                                right: 'auto'
+
+
+                            }}>
                             {suggestions.map((item, index) => (
                                 <li
                                     key={index}
@@ -108,7 +128,7 @@ export const DpdSearch = () => {
                         </ul>
                     )}
                 </div>
-                <span type="button" className="input-group-text text-black rounded-end" style={{backgroundColor:"#ffe81f"}} id="searchLoupa" onClick={handleSearch}>
+                <span type="button" className="input-group-text text-black rounded-end" style={{ backgroundColor: "#ffe81f", height: '38px' }} id="searchLoupa" onClick={handleSearch}>
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </span>
             </div>
