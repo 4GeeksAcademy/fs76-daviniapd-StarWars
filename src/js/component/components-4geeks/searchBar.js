@@ -81,8 +81,8 @@ const SearchBar = () => {
 
     return (
         <div>
-            <div className="input-group my-3 d-flex flex-row">
-                <div style={{ width: "30%" }} ref={dropdownRef}>
+            <div className="input-group my-3 d-flex flex-row ">
+                <div ref={dropdownRef}>
                     <input
                         type="text"
                         className={`form-control rounded-start ${query.trim() === '' || !suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase()) ? 'is-invalid' : ''}`}
@@ -94,11 +94,6 @@ const SearchBar = () => {
                         aria-describedby="searchLoupa"
                         ref={inputRef}
                     />
-                    {query.trim() === '' || !suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase()) ? (
-                        <div className="invalid-feedback">
-                            Por favor, introduzca un nombre válido
-                        </div>
-                    ) : null}
 
                     {suggestions.length > 0 && (
                         <ul className={`dropdown-menu ${suggestions.length > 0 ? 'show' : ''}`}

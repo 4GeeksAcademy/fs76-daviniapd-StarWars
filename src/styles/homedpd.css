@@ -42,7 +42,8 @@
 
   #btnFavDpd {
     font-family: 'Space Age', sans-serif;
-    transform: scaleY(1.5); 
+    transform: scaleY(1.2); 
+    letter-spacing: 0.1em;
 }
 
 
