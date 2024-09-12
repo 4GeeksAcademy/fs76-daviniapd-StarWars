@@ -27,7 +27,7 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #ffe81f, #ffd700); 
+    background: linear-gradient(to bottom, #ffe81f, #ffd700);
     cursor: pointer; 
     border-radius: 10px;
     box-shadow: 0 0 10px #ffe81f;
@@ -46,10 +46,84 @@
 }
 
 
-/* Cambiar el color del borde al enfocar el input */
 .custom-input:focus {
   border-color: rgb(255, 233, 31);
-  box-shadow: 0 0 5px 2px rgba(255, 230, 0, 0.5); /* Cambia el color de la sombra a rojo */
+  box-shadow: 0 0 5px 2px rgba(255, 230, 0, 0.5); 
 
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 230, 0, 0.663);
+  color: #000000
+}
+
+#cardSingleDpd {
+  background: #1e1e1e;
+  box-shadow: 0 1px 0px 7px rgba(255, 255, 255, 0.1);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 12px 10px;
+  width: fit-content;
+}
+
+.card_load {
+  position: relative;
+  float: left;
+  background: linear-gradient(
+    120deg,
+    #2a2a2a 30%,
+    #3a3a3a 38%,
+    #3a3a3a 40%,
+    #2a2a2a 48%
+  );
+  border-radius: 50%;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load89234 2s infinite;
+}
+
+.card_load_extreme_title {
+  position: relative;
+  float: right;
+  border-radius: 5px;
+  background: linear-gradient(
+    120deg,
+    #2a2a2a 30%,
+    #3a3a3a 38%,
+    #3a3a3a 40%,
+    #2a2a2a 48%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load89234 2s infinite;
+  color: #ffe81f;
+  font-family: 'Star Wars', sans-serif;
+
+}
+
+.card_load_extreme_descripion {
+  position: relative;
+  float: right;
+  border-radius: 5px;
+  background: linear-gradient(
+    120deg,
+    #2a2a2a 30%,
+    #3a3a3a 38%,
+    #3a3a3a 40%,
+    #2a2a2a 48%
+  );
+  margin-top: 10px;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load89234 2s infinite;
+  color: #ffe81f;
+}
+
+@keyframes load89234 {
+  100% {
+    background-position: -100% 0;
+  }
 }
 

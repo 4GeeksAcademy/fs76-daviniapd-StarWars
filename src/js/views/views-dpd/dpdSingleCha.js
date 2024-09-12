@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../../store/appContext";
+import { DpdNavbar } from "../../component/components-dpd/dpdNavbar";
 
 export const DpdSingleCha = () => {
     const { store, actions } = useContext(Context);
@@ -28,26 +29,53 @@ export const DpdSingleCha = () => {
 
 
     return (
-        <div className="container" style={{ height: "85vh" }}>
-            <div className="row">
-                <div className="col-6 text-center">
-                    <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="card-img-top" alt="imageCard" style={{ width: "75%", height: "500px", objectFit: "cover", objectPosition: "top" }} />                </div>
-                <div className="col-6 text-center p-5">
-                    <h1 className="display-4"><b>{character.properties.name}</b></h1>
-                    <p className="fs-2">{character.description}</p>
+        <>
+            <DpdNavbar />
+            <div className="full-screen-bg" id="bodySingleChaDpd" style={{
+                backgroundImage: "url(https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-01_f5aa33a9.jpeg)",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: "90%",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+            }}>
+            </div>
+            <div style={{ position: "relative", height: "80vh" }}>
+                <div className="container card p-4 m-5"
+                    id="cardSingleDpd"
+                    style={{
+                        position: "absolute",
+                        top: "20%",
+                        left: "50%",
+                        transform: "translate(-50%, -10%)",
+                        width: "100%",
+                    }}>
+                    <div className="row">
+                        <div className="col-6 text-center" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="card_load" alt="imageCard" style={{ width: "75%", height: "85%", objectFit: "cover", objectPosition: "top" }} />
+                        </div>
+                        <div className="col-5 text-center card_load_extreme_title" style={{ display: "flex", alignItems: "center",justifyContent: "center", flexDirection: "column" }}>
+                            <h1 className="display-5 p-5"><b>{character.properties.name}</b> </h1>
+                            <p className="fs-2 text-white" style={{fontFamily: "sans-serif" }}>{character.description}</p>
+                        </div>
+                    </div>
+                    <div className="card_load_extreme_descripion d-flex mt-4">
+                        <p className="col-2 text-center d-flex flex-column fs-4"><b>Name</b> {character.properties.name}</p>
+                        <p className="col-2 text-center d-flex flex-column fs-4"><b>Birth Year</b> {character.properties.birth_year}</p>
+                        <p className="col-2 text-center d-flex flex-column fs-4"><b>Gender</b> {character.properties.gender}</p>
+                        <p className="col-2 text-center d-flex flex-column fs-4"><b>Height</b>{character.properties.height}</p>
+                        <p className="col-2 text-center d-flex flex-column fs-4"><b>Skin Color</b> {character.properties.skin_color}</p>
+                        <p className="col-2 text-center d-flex flex-column fs-4"><b>Eye Color</b> {character.properties.eye_color}</p>
+                    </div>
                 </div>
             </div>
-            <hr className="border border-danger border-1 my-4 opacity-75" />
-            <div className="row">
-                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Name</b> {character.properties.name}</p>
-                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Birth Year</b> {character.properties.birth_year}</p>
-                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Gender</b> {character.properties.gender}</p>
-                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Height</b>{character.properties.height}</p>
-                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Skin Color</b> {character.properties.skin_color}</p>
-                <p className="col-2 text-danger text-center d-flex flex-column fs-4"><b>Eye Color</b> {character.properties.eye_color}</p>
-            </div>
 
-        </div>
+
+        </>
     );
 };
 

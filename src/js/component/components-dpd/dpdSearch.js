@@ -73,11 +73,12 @@ export const DpdSearch = () => {
 
     return (
         <div>
-            <div className="input-group my-3 d-flex flex-row justify-content-end">
-                <div style={{ width: "30%" }} ref={dropdownRef}>
+            <div className="input-group d-flex flex-row justify-content-end w-100">
+                <div ref={dropdownRef}>
                     <input
                         type="text"
                         className="form-control rounded-start custom-input"
+                        style={{ width: "350px" }}
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onFocus={handleFocus}
@@ -88,10 +89,12 @@ export const DpdSearch = () => {
                     />
                     {suggestions.length > 0 && (
                         <ul className={`dropdown-menu ${suggestions.length > 0 ? 'show' : ''}`}
-                            style={{
-                                maxHeight: '300px',
-                                overflowY: 'auto'
-                            }}>
+                        style={{
+                            maxHeight: '300px',
+                            overflowY: 'auto',
+                            right: 0,
+                            left: 'auto'
+                          }}>
                             {suggestions.map((item, index) => (
                                 <li
                                     key={index}

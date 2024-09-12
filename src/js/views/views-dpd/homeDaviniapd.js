@@ -33,7 +33,7 @@ export const HomeDaviniapd = () => {
 
 				}} >
 					<div className="container mb-5">
-					<DpdSearch />
+
 						<h1 className="my-3 mt-5" id="categoryTitle">Characters </h1>
 						<div className="row flex-nowrap pb-3" style={{ overflowX: "auto" }}>
 							{store.characters.map((character, index) => (

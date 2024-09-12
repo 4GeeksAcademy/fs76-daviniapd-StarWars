@@ -9,6 +9,7 @@ const SearchBar = () => {
     const { store } = useContext(Context);
     const inputRef = useRef(null);
     const dropdownRef = useRef(null);
+    
 
     useEffect(() => {
         if (query.length > 0) {
@@ -53,14 +54,21 @@ const SearchBar = () => {
         const selectedItem = suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase());
         if (selectedItem) {
             handleSelect(selectedItem);
+        } else if (query.trim() === '') {
+            alert('Please, enter a valid name');
         } else {
-            console.log("No matching item found");
+            alert('Please, enter a valid name');
         }
     };
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            handleSearch();
+            if (query.trim() !== '') {
+                handleSearch();
+            } else {
+                event.preventDefault();
+                alert('Please, enter a valid name');
+            }
         }
     };
 
@@ -77,7 +85,7 @@ const SearchBar = () => {
                 <div style={{ width: "30%" }} ref={dropdownRef}>
                     <input
                         type="text"
-                        className="form-control rounded-start"
+                        className={`form-control rounded-start ${query.trim() === '' || !suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase()) ? 'is-invalid' : ''}`}
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onFocus={handleFocus}
@@ -86,6 +94,12 @@ const SearchBar = () => {
                         aria-describedby="searchLoupa"
                         ref={inputRef}
                     />
+                    {query.trim() === '' || !suggestions.find(item => item.properties.name.toLowerCase() === query.toLowerCase()) ? (
+                        <div className="invalid-feedback">
+                            Por favor, introduzca un nombre válido
+                        </div>
+                    ) : null}
+
                     {suggestions.length > 0 && (
                         <ul className={`dropdown-menu ${suggestions.length > 0 ? 'show' : ''}`}
                             style={{
