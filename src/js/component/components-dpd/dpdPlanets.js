@@ -66,7 +66,7 @@ export const DpdPlanets = (props) => {
 							<span className="star-wars-font">Climate   <span className="fs-6">  {props.climate}</span></span>
 						</p>
 						<div className="d-flex justify-content-center py-5">
-							<Link to={"/dpdSingleCha/" + props.uid}>
+							<Link to={"/dpdSinglePla/" + props.uid}>
 								<button type="button" className="btn btn-outline-light me-2" id="btnLearnMore">Learn more!</button>
 							</Link>
 							<button
