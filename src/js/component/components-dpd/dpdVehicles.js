@@ -66,7 +66,7 @@ export const DpdVehicles = (props) => {
 							<span className="star-wars-font">Crew   <span className="fs-6">  {props.crew}</span></span>
 						</p>
 						<div className="d-flex justify-content-center py-5">
-							<Link to={"/dpdSingleCha/" + props.uid}>
+							<Link to={"/dpdSingleVehi/" + props.uid}>
 								<button type="button" className="btn btn-outline-light me-2" id="btnLearnMore">Learn more!</button>
 							</Link>
 							<button

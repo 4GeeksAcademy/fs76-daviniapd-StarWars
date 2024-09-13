@@ -10,6 +10,7 @@ import { SingleVehicle } from "./views/views-4geeks/singleVehicle";
 import { HomeDaviniapd } from "./views/views-dpd/homeDaviniapd";
 import { DpdSingleCha } from "./views/views-dpd/dpdSingleCha";
 import { DpdSinglePla } from "./views/views-dpd/dpdSinglePla";
+import { DpdSingleVehi } from "./views/views-dpd/dpdSingleVehi";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/components-4geeks/navbar";
@@ -34,6 +35,7 @@ const Layout = () => {
 						<Route path="/homeDaviniapd" element={<HomeDaviniapd />} />
 						<Route path="/dpdSingleCha/:id" element={<DpdSingleCha />} />
 						<Route path="/dpdSinglePla/:id" element={<DpdSinglePla />} />
+						<Route path="/dpdSingleVehi/:id" element={<DpdSingleVehi />} />
 						<Route path="*" element={<div className="text-center mx-auto my-auto mt-5"> <h1>Not found in this galaxy!</h1><img src="https://cdn.dribbble.com/users/601803/screenshots/2037073/bb8.gif" alt="loading" /> </div>} />
 					</Routes>
 					<Footer />
