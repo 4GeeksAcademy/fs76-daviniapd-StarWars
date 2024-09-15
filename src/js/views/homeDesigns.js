@@ -11,7 +11,7 @@ export const HomeDesigns = () => {
 	<div className="full-screen-bg" id="homeDesigns">
 
 	<div className="d-flex justify-content-center align-items-center h-50 flex-column">
-	<h1 className="text-center" id="titleHome">CHOOSE YOUR CONTACT LIST EXPERIENCE</h1>
+	<h1 className="text-center" id="titleHome">CHOOSE YOUR STAR WARS EXPERIENCE</h1>
         <div className="mt-4">
           <Link to="/homeDaviniapd">
             <span className="btn btn-lg me-4" id="button-dpd" role="button">
