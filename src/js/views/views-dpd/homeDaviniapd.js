@@ -21,7 +21,7 @@ export const HomeDaviniapd = () => {
 
 	return (
 		<>
-		<DpdNavbar />
+			<DpdNavbar />
 
 			<div className="full-screen-bg" id="bodyHomedDpd">
 				<div className="w-100 py-5" style={{
@@ -100,9 +100,18 @@ export const HomeDaviniapd = () => {
 				</div>
 
 
-				<h1 className="text-center bg-warning p-5" id="titleHomr">	<Link to="/" className="mx-2">
-					<button className="btn btn-outline-secondary mx-5">Select Design</button>
-				</Link><i className="fa-solid fa-radiation"></i>  UNDER CONSTRUCTION  <i className="fa-solid fa-radiation"></i> </h1>
+				<div className="container d-flex align-items-center justify-content-between mt-5 pb-5">
+					<span></span>
+					<p className="my-auto mx-2 text-secondary">
+						Made by{" "}
+						<a href="https://github.com/daviniapd" className="link-secondary">daviniapd</a> <i className="fa-solid fa-otter text-warning" /> {" "}
+						in{" "}
+						<a href="http://www.4geeksacademy.com" className="link-secondary">4Geeks Academy</a>
+					</p>
+					<Link to="/" className="mx-2">
+						<button className="btn btn-outline-warning">Select Design</button>
+					</Link>
+				</div>
 			</div>
 		</>
 	);
